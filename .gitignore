@@ -1,0 +1,16 @@
+# Byte-compiled Python files
+__pycache__/
+*.pyc
+
+# Virtual environment folder
+venv/
+
+# Database files (we don't upload real student data to GitHub)
+data/*.db
+
+# VS Code settings folder
+.vscode/
+
+# OS-generated files
+.DS_Store
+Thumbs.db
