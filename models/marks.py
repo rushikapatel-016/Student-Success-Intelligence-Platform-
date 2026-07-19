@@ -42,6 +42,36 @@ class Marks:
 
 
 if __name__ == "__main__":
-    marks_list = Marks.get_marks_by_student(1)
-    for subject, score in marks_list:
-        print(f"{subject}: {score}")
+    marks_data = [
+        (1, "Math", 85.5),
+        (1, "Science", 90),
+        (1, "English", 78),
+
+        (3, "Math", 92),
+        (3, "Science", 88),
+        (3, "English", 95),
+
+        (4, "Math", 45),
+        (4, "Science", 52),
+        (4, "English", 60),
+
+        (5, "Math", 70),
+        (5, "Science", 65),
+        (5, "English", 72),
+
+        (6, "Math", 88),
+        (6, "Science", 91),
+        (6, "English", 85),
+
+        (7, "Math", 38),
+        (7, "Science", 42),
+        (7, "English", 55),
+
+        (8, "Math", 76),
+        (8, "Science", 80),
+        (8, "English", 68),
+    ]
+
+    for student_id, subject, score in marks_data:
+        mark = Marks(student_id, subject, score)
+        mark.save_to_database()
