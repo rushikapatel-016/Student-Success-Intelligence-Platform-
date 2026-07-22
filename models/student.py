@@ -73,6 +73,20 @@ class Student:
         return result
 
     @staticmethod
+    def get_student_by_roll_number(roll_number):
+        connection = create_connection()
+        cursor = connection.cursor()
+
+        cursor.execute("""
+            SELECT student_id, name, roll_number, email, department
+            FROM students WHERE roll_number = ?
+        """, (roll_number,))
+        result = cursor.fetchone()
+
+        connection.close()
+        return result
+
+    @staticmethod
     def update_student(student_id, email=None, department=None):
         if not email and not department:
             print("Error: No update information provided.")
