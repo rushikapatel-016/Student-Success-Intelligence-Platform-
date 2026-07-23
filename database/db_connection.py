@@ -2,6 +2,7 @@ import sqlite3
 
 def create_connection():
     connection = sqlite3.connect("data/student_success.db")
+    connection.execute("PRAGMA foreign_keys = ON")
     return connection
 
 def create_tables():
